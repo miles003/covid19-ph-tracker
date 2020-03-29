@@ -1,7 +1,7 @@
 <?php
 if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/^(curl)/i', $_SERVER['HTTP_USER_AGENT'])) {
     require_once 'table/Table.php';
-    require_once 'table/Color.php';
+    // require_once 'table/Color.php';
     echo "\n";
     echo "\n";
     $curl = curl_init('https://corona.lmao.ninja/countries/philippines');
@@ -16,16 +16,20 @@ if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/^(curl)/i', $_SERVER['HTT
     $tbl->setHeaders(
         array('Today New Cases', 'Critical','Todays Deaths','Total Deaths','Total Cases')
     );
-    $tbl->addRow(array($decode['todayCases'], $decode['critical'], $decode['todayDeaths'], $decode['deaths'], $decode['cases'],));
-    echo Console_Color::convert("%yPHILIPPINES COVID-19 TRACKER REALTIME DATA %n\n");
+    $tbl->addRow(array(strval($decode['todayCases']), 
+    strval($decode['critical']), 
+    strval($decode['todayDeaths']), 
+    strval($decode['deaths']), 
+    strval($decode['cases'])));
+    echo "PHILIPPINES COVID-19 TRACKER REALTIME DATA \n";
     echo "\n";
     echo $tbl->getTable();
     echo "\n";
-    echo Console_Color::convert("%yCOVID-19 RealTime Data PHP version Made By:%n %bMiles Balatar%n\n");
-    echo Console_Color::convert("%yData:source = https://www.worldometers.info/coronavirus/ %n\n");
+    echo "COVID-19 RealTime Data PHP version Made By: Miles Balatar\n";
+    echo "Data:source = https://www.worldometers.info/coronavirus/ \n";
 }
 else {
-    echo 'Sorry, Curl only available at the moment... try curl';
+    echo 'CLI lang pwede sir try mo to curl http://www.covid19-ph-tracker.ga/';
     exit();
 }
 
