@@ -14,13 +14,15 @@ if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/^(curl)/i', $_SERVER['HTT
     $decode = json_decode($result,true);
     $tbl = new Console_Table();
     $tbl->setHeaders(
-        array('Today New Cases', 'Critical','Todays Deaths','Total Deaths','Total Cases')
+        array('New Cases', 'Critical','Todays Deaths','Total Deaths','Total Cases','Recovered')
     );
     $tbl->addRow(array(strval($decode['todayCases']), 
     strval($decode['critical']), 
     strval($decode['todayDeaths']), 
     strval($decode['deaths']), 
-    strval($decode['cases'])));
+    strval($decode['cases']),
+    strval($decode['recovered'])
+    ));
     echo "PHILIPPINES COVID-19 TRACKER REALTIME DATA \n";
     echo "\n";
     echo $tbl->getTable();
