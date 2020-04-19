@@ -5,7 +5,7 @@ How to use?
 
 Step1: Open CMD,GIT or any Terminal
 
-Step2: type curl http://www.covid19-ph-tracker.ga/
+Step2: type curl http://covid-ph-tracker.ga/
 
 Step3: data will show
 
