@@ -4,7 +4,7 @@ if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/^(curl)/i', $_SERVER['HTT
     // require_once 'table/Color.php';
     echo "\n";
     echo "\n";
-    $curl = curl_init('https://corona.lmao.ninja/countries/philippines');
+    $curl = curl_init('https://corona.lmao.ninja/v2/countries/philippines');
     curl_setopt($curl, CURLOPT_FAILONERROR, true);
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
